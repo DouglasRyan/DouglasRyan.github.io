@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Canvas基本用法&amp;lt;canvas&amp;gt; 是 HTML5 新增的元素，可用于通过使用JavaScript中的脚本来绘制图形。例如，它可以用于绘制图形，制作照片，创建动画，甚至可以进行实时视频处理或渲染。">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas（一）">
+<meta property="og:url" content="http://yoursite.com/2019/06/07/Canvas（一）/index.html">
+<meta property="og:site_name" content="Ryan&#39;s Blog">
+<meta property="og:description" content="Canvas基本用法&amp;lt;canvas&amp;gt; 是 HTML5 新增的元素，可用于通过使用JavaScript中的脚本来绘制图形。例如，它可以用于绘制图形，制作照片，创建动画，甚至可以进行实时视频处理或渲染。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-07T10:58:31.384Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Canvas（一）">
+<meta name="twitter:description" content="Canvas基本用法&amp;lt;canvas&amp;gt; 是 HTML5 新增的元素，可用于通过使用JavaScript中的脚本来绘制图形。例如，它可以用于绘制图形，制作照片，创建动画，甚至可以进行实时视频处理或渲染。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/07/Canvas（一）/">
+
+
+
+
+
+  <title>Canvas（一） | Ryan's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ryan's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/07/Canvas（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Douglas Ryan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryan's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Canvas（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-07T18:55:55+08:00">
+                2019-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Canvas基本用法"><a href="#Canvas基本用法" class="headerlink" title="Canvas基本用法"></a>Canvas基本用法</h2><p><code>&lt;canvas&gt;</code> 是 HTML5 新增的元素，可用于通过使用JavaScript中的脚本来绘制图形。例如，它可以用于绘制图形，制作照片，创建动画，甚至可以进行实时视频处理或渲染。</p>
+<a id="more"></a>
+<h3 id="lt-canvas-gt-元素"><a href="#lt-canvas-gt-元素" class="headerlink" title="&lt;canvas&gt;元素"></a><code>&lt;canvas&gt;</code>元素</h3><p><code>&lt;canvas id=&quot;hb&quot; width=&quot;300&quot; height=&quot;150&quot;&gt;&lt;/canvas&gt;</code></p>
+<p>默认属性：<code>width=&quot;300&quot; height=&quot;150&quot;</code></p>
+<h3 id="渲染上下文"><a href="#渲染上下文" class="headerlink" title="渲染上下文"></a>渲染上下文</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'hb'</span>);<span class="comment">//画布</span></span><br><span class="line"><span class="keyword">var</span> hb = canvas.getContext(<span class="string">'2d'</span>);<span class="comment">//2D画板</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="getContext-方法"><a href="#getContext-方法" class="headerlink" title="getContext()方法"></a><code>getContext()</code>方法</h4><p><code>hb.getContext(&#39;2d&#39;)</code></p>
+<h2 id="绘制基础"><a href="#绘制基础" class="headerlink" title="绘制基础"></a>绘制基础</h2><p>canvas元素默认被网格所覆盖。通常来说网格中的一个单元相当于canvas元素中的一像素。栅格的起点为左上角（坐标为（0,0））。所有元素的位置都相对于原点定位。</p>
+<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><ol>
+<li>首先，你需要创建路径起始点。</li>
+<li>然后你使用<a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#Paths" target="_blank" rel="noopener">画图命令</a>去画出路径。</li>
+<li>之后你把路径封闭。</li>
+<li>一旦路径生成，你就能通过描边或填充路径区域来渲染图形。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 创建路径起始点</span></span><br><span class="line">beginPath()       <span class="comment">//新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 画图命令</span></span><br><span class="line"><span class="comment">/*例如*/</span></span><br><span class="line">lineTo(x,y)       <span class="comment">//CanvasRenderingContext2D API 绘制形状，文本，图像和其他对象</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">// 3. 封闭路径</span></span><br><span class="line"><span class="comment">/*不是必须的，若当前点为开始点，则函数什么也不做*/</span></span><br><span class="line"><span class="comment">/*当调用fill()函数时，所有没有闭合的形状都会自动闭合*/</span></span><br><span class="line"><span class="comment">/*当调用stroke()时则不会自动闭合。*/</span></span><br><span class="line">closePath()       <span class="comment">//闭合路径之后图形绘制命令又重新指向到上下文中。</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 描边或者填充图形</span></span><br><span class="line">stroke()        <span class="comment">//通过线条来绘制图形轮廓。</span></span><br><span class="line">fill()        <span class="comment">//通过填充路径的内容区域生成实心的图形。</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="移动笔触"><a href="#移动笔触" class="headerlink" title="移动笔触"></a>移动笔触</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*当canvas初始化或者beginPath()调用后，通常会使用moveTo()函数设置起点。*/</span></span><br><span class="line"><span class="comment">/*或者使用moveTo()绘制一些不连续的路径。*/</span></span><br><span class="line">moveTo(x,y)       <span class="comment">//将笔触移动到指定的坐标。</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="绘制直线"><a href="#绘制直线" class="headerlink" title="绘制直线"></a>绘制直线</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lineTo(x, y)        <span class="comment">//绘制一条从当前位置到指定位置的直线。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h3><ul>
+<li>图形：由点到线(stroke)，有线到面(fill)</li>
+<li>直线图形：起点，终点</li>
+<li>圆弧图形：起点，终点，半径，弧度</li>
+<li>贝塞尔曲线：起点，终点，控制点</li>
+</ul>
+<h4 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rect(x, y, width, height)</span><br><span class="line"><span class="comment">//绘制一个左上角坐标为（x,y），宽高为width以及height的矩形。</span></span><br><span class="line"></span><br><span class="line">fillRect(x, y, width, height)</span><br><span class="line"><span class="comment">//绘制一个填充的矩形</span></span><br><span class="line">strokeRect(x, y, width, height)</span><br><span class="line"><span class="comment">//绘制一个矩形的边框</span></span><br><span class="line">clearRect(x, y, width, height)</span><br><span class="line"><span class="comment">//清除指定矩形区域，让清除部分完全透明。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="绘制三角形"><a href="#绘制三角形" class="headerlink" title="绘制三角形"></a>绘制三角形</h3><p>由三条直线，四个点构成三角形；<br>同理可推断其他多边形。（边即直线）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hb.beginPath();</span><br><span class="line">hb.moveTo(<span class="number">75</span>, <span class="number">50</span>);</span><br><span class="line">hb.lineTo(<span class="number">100</span>, <span class="number">75</span>);</span><br><span class="line">hb.lineTo(<span class="number">100</span>, <span class="number">25</span>);</span><br><span class="line">hb.fill();</span><br></pre></td></tr></table></figure>
+
+<h3 id="绘制圆弧"><a href="#绘制圆弧" class="headerlink" title="绘制圆弧"></a>绘制圆弧</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">arc(x, y, radius, startAngle, endAngle, anticlockwise)</span><br><span class="line"><span class="comment">//画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*arc()方法有六个参数：</span></span><br><span class="line"><span class="comment">*x,y为绘制圆弧所在圆上的圆心坐标。</span></span><br><span class="line"><span class="comment">*radius为半径。</span></span><br><span class="line"><span class="comment">*startAngle以及endAngle参数用弧度定义了开始以及结束的弧度。这些都是以x轴为基准。</span></span><br><span class="line"><span class="comment">*anticlockwise为一个布尔值。为true时是逆时针方向，否则是顺时针方向。</span></span><br><span class="line"><span class="comment">*弧度=(Math.PI/180)*角度。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">arcTo(x1, y1, x2, y2, radius)</span><br><span class="line"><span class="comment">// 实现不可靠，不推荐。根据给定的控制点和半径画一段圆弧，再以直线连接两个控制点。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h3><p>把它当做PS里的钢笔</p>
+<h4 id="二次贝塞尔曲线"><a href="#二次贝塞尔曲线" class="headerlink" title="二次贝塞尔曲线"></a>二次贝塞尔曲线</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">quadraticCurveTo(cp1x, cp1y, x, y)</span><br><span class="line"><span class="comment">//绘制二次贝塞尔曲线，cp1x,cp1y为一个控制点，x,y为结束点。</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="三次贝塞尔曲线"><a href="#三次贝塞尔曲线" class="headerlink" title="三次贝塞尔曲线"></a>三次贝塞尔曲线</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)</span><br><span class="line"><span class="comment">//绘制三次贝塞尔曲线，cp1x,cp1y为控制点一，cp2x,cp2y为控制点二，x,y为结束点。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fillText(text, x, y [, maxWidth])</span><br><span class="line"><span class="comment">//在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.</span></span><br><span class="line">strokeText(text, x, y [, maxWidth])</span><br><span class="line"><span class="comment">//在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hb.textStyle        </span><br><span class="line"><span class="comment">//具体样式自己定</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Path2D-对象"><a href="#Path2D-对象" class="headerlink" title="Path2D 对象"></a>Path2D 对象</h3><p><code>Path2D</code>用来缓存或记录绘画命令，使得能快速地回顾路径。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Path2D();     <span class="comment">// 空的Path对象</span></span><br><span class="line"><span class="keyword">new</span> Path2D(path); <span class="comment">// 克隆Path对象</span></span><br><span class="line"><span class="keyword">new</span> Path2D(d);    <span class="comment">// 从SVG建立Path对象 d:SVG字符串变量</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Path2D.addPath(path [, transform])</span><br></pre></td></tr></table></figure>
+
+<h2 id="色彩和样式"><a href="#色彩和样式" class="headerlink" title="色彩和样式"></a>色彩和样式</h2><h3 id="色彩"><a href="#色彩" class="headerlink" title="色彩"></a>色彩</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fillStyle = color</span><br><span class="line"><span class="comment">//设置图形的填充颜色。</span></span><br><span class="line">strokeStyle = color</span><br><span class="line"><span class="comment">//设置图形轮廓的颜色。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*color 包含表示 CSS 颜色值的字符串*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="透明度（Transparent）"><a href="#透明度（Transparent）" class="headerlink" title="透明度（Transparent）"></a>透明度（Transparent）</h3><h3 id="线型（Line-style）"><a href="#线型（Line-style）" class="headerlink" title="线型（Line style）"></a>线型（Line style）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">lineWidth = value</span><br><span class="line"><span class="comment">//设置线条宽度。</span></span><br><span class="line">lineCap = type</span><br><span class="line"><span class="comment">//设置线条末端样式。</span></span><br><span class="line">lineJoin = type</span><br><span class="line"><span class="comment">//设定线条与线条间接合处的样式。</span></span><br><span class="line">miterLimit = value</span><br><span class="line"><span class="comment">//限制当两条线相交时交接处最大长度；所谓交接处长度（斜接长度）是指线条交接处内角顶点到外角顶点的长度。</span></span><br><span class="line">getLineDash()</span><br><span class="line"><span class="comment">//返回一个包含当前虚线样式，长度为非负偶数的数组。</span></span><br><span class="line">setLineDash(segments)</span><br><span class="line"><span class="comment">//设置当前虚线样式。</span></span><br><span class="line">lineDashOffset = value</span><br><span class="line"><span class="comment">//设置虚线样式的起始偏移量。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="渐变（Gradient）"><a href="#渐变（Gradient）" class="headerlink" title="渐变（Gradient）"></a>渐变（Gradient）</h3><h3 id="图案样式（pattern）"><a href="#图案样式（pattern）" class="headerlink" title="图案样式（pattern）"></a>图案样式（pattern）</h3><h3 id="阴影（Shadow）"><a href="#阴影（Shadow）" class="headerlink" title="阴影（Shadow）"></a>阴影（Shadow）</h3><h3 id="Canvas-填充规则"><a href="#Canvas-填充规则" class="headerlink" title="Canvas 填充规则"></a>Canvas 填充规则</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hb.fill(<span class="string">"evenodd || nonzero"</span>)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/07/JavaScript实现排序算法（一）/" rel="next" title="JavaScript实现排序算法（一）">
+                <i class="fa fa-chevron-left"></i> JavaScript实现排序算法（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Douglas Ryan</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas基本用法"><span class="nav-number">1.</span> <span class="nav-text">Canvas基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-canvas-gt-元素"><span class="nav-number">1.1.</span> <span class="nav-text">&lt;canvas&gt;元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渲染上下文"><span class="nav-number">1.2.</span> <span class="nav-text">渲染上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#getContext-方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">getContext()方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制基础"><span class="nav-number">2.</span> <span class="nav-text">绘制基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制路径"><span class="nav-number">2.1.</span> <span class="nav-text">绘制路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移动笔触"><span class="nav-number">2.1.1.</span> <span class="nav-text">移动笔触</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制直线"><span class="nav-number">2.1.2.</span> <span class="nav-text">绘制直线</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制图形"><span class="nav-number">2.2.</span> <span class="nav-text">绘制图形</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制矩形"><span class="nav-number">2.2.1.</span> <span class="nav-text">绘制矩形</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制三角形"><span class="nav-number">2.3.</span> <span class="nav-text">绘制三角形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制圆弧"><span class="nav-number">2.4.</span> <span class="nav-text">绘制圆弧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贝塞尔曲线"><span class="nav-number">2.5.</span> <span class="nav-text">贝塞尔曲线</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二次贝塞尔曲线"><span class="nav-number">2.5.1.</span> <span class="nav-text">二次贝塞尔曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三次贝塞尔曲线"><span class="nav-number">2.5.2.</span> <span class="nav-text">三次贝塞尔曲线</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制文本"><span class="nav-number">2.6.</span> <span class="nav-text">绘制文本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文本样式"><span class="nav-number">2.6.1.</span> <span class="nav-text">文本样式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path2D-对象"><span class="nav-number">2.7.</span> <span class="nav-text">Path2D 对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#色彩和样式"><span class="nav-number">3.</span> <span class="nav-text">色彩和样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#色彩"><span class="nav-number">3.1.</span> <span class="nav-text">色彩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度（Transparent）"><span class="nav-number">3.2.</span> <span class="nav-text">透明度（Transparent）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线型（Line-style）"><span class="nav-number">3.3.</span> <span class="nav-text">线型（Line style）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐变（Gradient）"><span class="nav-number">3.4.</span> <span class="nav-text">渐变（Gradient）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图案样式（pattern）"><span class="nav-number">3.5.</span> <span class="nav-text">图案样式（pattern）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阴影（Shadow）"><span class="nav-number">3.6.</span> <span class="nav-text">阴影（Shadow）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Canvas-填充规则"><span class="nav-number">3.7.</span> <span class="nav-text">Canvas 填充规则</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Douglas Ryan</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
