@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="git,">
 
 
 
@@ -79,14 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="404">
-<meta property="og:url" content="http://yoursite.com/404/index.html">
+<meta name="description" content="GitHubGitHub 基础配置12345git config --global user.name xxxxxx  (把xxxxxx替换成你的英文名字随便什么都行)git config --global user.email yyyyyy  (把yyyyyy替换成你的邮箱跟github一致或者不一致也行)git config --global push.default simple">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub与git命令">
+<meta property="og:url" content="http://yoursite.com/2019/06/20/GitHub与git命令/index.html">
 <meta property="og:site_name" content="Ryan&#39;s Blog">
+<meta property="og:description" content="GitHubGitHub 基础配置12345git config --global user.name xxxxxx  (把xxxxxx替换成你的英文名字随便什么都行)git config --global user.email yyyyyy  (把yyyyyy替换成你的邮箱跟github一致或者不一致也行)git config --global push.default simple">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-07T11:12:48.545Z">
+<meta property="og:updated_time" content="2019-06-20T12:30:33.453Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="404">
+<meta name="twitter:title" content="GitHub与git命令">
+<meta name="twitter:description" content="GitHubGitHub 基础配置12345git config --global user.name xxxxxx  (把xxxxxx替换成你的英文名字随便什么都行)git config --global user.email yyyyyy  (把yyyyyy替换成你的邮箱跟github一致或者不一致也行)git config --global push.default simple">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/404/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/20/GitHub与git命令/">
 
 
 
 
 
-  <title>404 | Ryan's Blog</title>
+  <title>GitHub与git命令 | Ryan's Blog</title>
   
 
 
@@ -247,33 +251,153 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/20/GitHub与git命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Douglas Ryan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryan's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">404</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">GitHub与git命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T20:21:06+08:00">
+                2019-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a><a href="github.com">GitHub</a></h2><h3 id="GitHub-基础配置"><a href="#GitHub-基础配置" class="headerlink" title="GitHub 基础配置"></a>GitHub 基础配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name xxxxxx  (把xxxxxx替换成你的英文名字随便什么都行)</span><br><span class="line">git config --global user.email yyyyyy  (把yyyyyy替换成你的邮箱跟github一致或者不一致也行)</span><br><span class="line">git config --global push.default simple                                            </span><br><span class="line">git config --global core.quotepath <span class="literal">false</span>  </span><br><span class="line">git config --global core.editor <span class="string">"vim"</span>   (使用vim编辑提交信息）</span><br></pre></td></tr></table></figure>
+
+<h3 id="GitHub-Generate-SSH-key"><a href="#GitHub-Generate-SSH-key" class="headerlink" title="GitHub Generate SSH key"></a>GitHub Generate SSH key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"你的邮箱"</span></span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="GitHub-Pages-预览-HTML"><a href="#GitHub-Pages-预览-HTML" class="headerlink" title="GitHub Pages 预览 HTML"></a>GitHub Pages 预览 HTML</h3><p><code>Settings &gt; GitHub Pages &gt; Source</code></p>
+<h2 id="Git-命令"><a href="#Git-命令" class="headerlink" title="Git 命令"></a>Git 命令</h2><p>Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。</p>
+<p><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">廖雪峰Git教程</a></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/20/Vim/" rel="next" title="Vim">
+                <i class="fa fa-chevron-left"></i> Vim
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/20/hexo-GitHub-搭建博客/" rel="prev" title="hexo GitHub 搭建博客">
+                hexo GitHub 搭建博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -306,8 +430,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -358,6 +491,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub"><span class="nav-number">1.</span> <span class="nav-text">GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-基础配置"><span class="nav-number">1.1.</span> <span class="nav-text">GitHub 基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-Generate-SSH-key"><span class="nav-number">1.2.</span> <span class="nav-text">GitHub Generate SSH key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-Pages-预览-HTML"><span class="nav-number">1.3.</span> <span class="nav-text">GitHub Pages 预览 HTML</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-命令"><span class="nav-number">2.</span> <span class="nav-text">Git 命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
