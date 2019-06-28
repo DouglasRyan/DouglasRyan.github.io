@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="React,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,13 @@
 
 
 
-<meta name="description" content="Todolist 效果图获取输入框的值 监听input的onChange事件 设置state.inputValue，获取input.value   监听form表单的onSubmit事件 获取表单提交时的inputValue值    动态创建li标签 创建数组，使用.map()函数创建数组对应标签 使用获取到的inputValue值，创建数组">
-<meta name="keywords" content="React">
-<meta property="og:type" content="article">
-<meta property="og:title" content="React TodoList Demo 思路初探">
-<meta property="og:url" content="http://yoursite.com/2019/06/21/React-TodoList-Demo-思路初探/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ryan&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/Redux/index.html">
 <meta property="og:site_name" content="Ryan&#39;s Blog">
-<meta property="og:description" content="Todolist 效果图获取输入框的值 监听input的onChange事件 设置state.inputValue，获取input.value   监听form表单的onSubmit事件 获取表单提交时的inputValue值    动态创建li标签 创建数组，使用.map()函数创建数组对应标签 使用获取到的inputValue值，创建数组">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-21T14:56:01.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React TodoList Demo 思路初探">
-<meta name="twitter:description" content="Todolist 效果图获取输入框的值 监听input的onChange事件 设置state.inputValue，获取input.value   监听form表单的onSubmit事件 获取表单提交时的inputValue值    动态创建li标签 创建数组，使用.map()函数创建数组对应标签 使用获取到的inputValue值，创建数组">
+<meta name="twitter:title" content="Ryan&#39;s Blog">
 
 
 
@@ -120,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/06/21/React-TodoList-Demo-思路初探/">
+  <link rel="canonical" href="http://yoursite.com/tags/Redux/">
 
 
 
 
 
-  <title>React TodoList Demo 思路初探 | Ryan's Blog</title>
+  <title>标签: Redux | Ryan's Blog</title>
   
 
 
@@ -145,7 +140,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -249,163 +244,52 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>Redux<small>标签</small>
+        </h1>
+      </div>
 
-  
-  
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/21/React-TodoList-Demo-思路初探/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Douglas Ryan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ryan's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">React TodoList Demo 思路初探</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2019/06/22/redux-Todo-demo/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">redux Todo-demo</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-21T22:37:09+08:00">
-                2019-06-21
-              </time>
-            
+            </a>
+        
+      </h2>
 
-            
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-06-22T09:22:34+08:00" content="2019-06-22">
+          06-22
+        </time>
+      </div>
 
-            
-          </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="Todolist-效果图"><a href="#Todolist-效果图" class="headerlink" title="Todolist 效果图"></a>Todolist 效果图</h2><h2 id="获取输入框的值"><a href="#获取输入框的值" class="headerlink" title="获取输入框的值"></a>获取输入框的值</h2><ul>
-<li>监听input的<code>onChange</code>事件<ul>
-<li>设置<code>state.inputValue</code>，获取<code>input.value</code></li>
-</ul>
-</li>
-<li>监听form表单的<code>onSubmit</code>事件<ul>
-<li>获取表单提交时的<code>inputValue</code>值</li>
-</ul>
-</li>
-</ul>
-<h3 id="动态创建li标签"><a href="#动态创建li标签" class="headerlink" title="动态创建li标签"></a>动态创建<code>li</code>标签</h3><ul>
-<li>创建数组，使用<code>.map()</code>函数创建数组对应标签</li>
-<li>使用获取到的<code>inputValue</code>值，创建数组</li>
-</ul>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/React/" rel="tag"># React</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/06/21/webpack配置/" rel="next" title="webpack配置">
-                <i class="fa fa-chevron-left"></i> webpack配置
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/22/redux-Todo-demo/" rel="prev" title="redux Todo-demo">
-                redux Todo-demo <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
@@ -413,10 +297,6 @@
 
 
           
-
-  
-
-
 
         </div>
         
@@ -437,17 +317,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -498,22 +369,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Todolist-效果图"><span class="nav-number">1.</span> <span class="nav-text">Todolist 效果图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取输入框的值"><span class="nav-number">2.</span> <span class="nav-text">获取输入框的值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态创建li标签"><span class="nav-number">2.1.</span> <span class="nav-text">动态创建li标签</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -661,10 +516,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
 
   
 
